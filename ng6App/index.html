@@ -1,25 +1,26 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <script>
+        // See http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
+        (function(){
+          var redirect = sessionStorage.redirect;
+          delete sessionStorage.redirect;
+          if (redirect && redirect != location.href) {
+            history.replaceState(null, null, redirect);
+          }
+        })();
+      </script>
   <meta charset="utf-8">
   <title>Ng6App</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,700" rel="stylesheet">
-  <base href="/ng6App/index.html">
+  <base href="/ng6App/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script>
-    // See http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
-    (function(){
-      var redirect = sessionStorage.redirect;
-      delete sessionStorage.redirect;
-      if (redirect && redirect != location.href) {
-        history.replaceState(null, null, redirect);
-      }
-    })();
-  </script>
+  
 </head>
 <body>
   <app-root></app-root>
