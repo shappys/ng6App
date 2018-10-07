@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UsersComponent } from './users/users.component';
-import { DetailsComponent } from './details/details.component';
-import { PostsComponent } from './posts/posts.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 const routes: Routes = [
   {
@@ -11,15 +9,13 @@ const routes: Routes = [
   },
   {
     path: 'details/:id',
-    //loadChildren: "../app/details/details.module#DetailsModule"
-    component: DetailsComponent
+    loadChildren: "../app/details/details.module#DetailsModule"
   },
   {
     path: 'posts',
-    component: PostsComponent
+    loadChildren: "../app/posts/posts.module#PostsModule"
   },
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
